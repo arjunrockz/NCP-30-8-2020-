@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<head>
+  <title>Form Validation</title>
+  <script>
+    function validateform(){
+      var studentfirstname=document.registerform.studentfirstname.value;
+      var studentlastname=document.registerform.studentlastname.value;
+      var parentfirstname=document.registerform.parentfirstname.value;
+      var parentlastname=document.registerform.parentlastname.value;
+      var emailextension=document.registerform.emailextension.value;
+      var pattern="[a-z0-9.-]+\.[a-z]{2, 4}"
+      if(studentfirstname==null || studentfirstname==""){
+        alert("Student first name blank");  
+        return false;
+      }else if(studentlastname==null ||studentlastname==""){
+        alert("Student last name blank");
+        return false;
+      } else if(parentfirstname==null || parentfirstname==""){
+        alert("Parent first name blank");
+        return false;
+      }else if(parentlastname==null ||parentlastname==""){
+        alert("Parent last name blank");
+        return false;
+      }else if(pattern.test(emailextension)){
+        alert("Email extension wrong")
+      }
+     
+}
+  </script>
+</head>
+<body>
+<div id="container">
+ <h1> Student Registration Form </h1>
+ 
+ <form name="registerform" method="post" onsubmit="return validateform()" >
+
+
+   <div class="userinput">
+    <h3><label> Student </label></h3>
+  </div>
+  <div class="userinput">
+   <label> First Name  </label>
+   <input type="text" name="studentfirstname">
+  </div>
+
+  <div class="userinput">
+    <label> Middle Name  </label>
+    <input type="text" name="studentmiddlename">
+   </div>
+  
+  <div class="userinput">
+   <label> Last Name  </label>
+   <input type="text" name="studentlastname">
+  </div>
+
+  <div class="userinput">
+    <h3><label> Permanent Address  </label></h3>
+  </div>
+  <div class="userinput">
+    <table>
+    <tr>
+      <td>
+        <label> House Number and Name  </label>
+        <input type="text" name="housenum" value="" />
+      </td>
+      <td>
+        <label> Street number and Name  </label>
+        <input type="text" name="streetnum" value="" />
+      </td>
+      <td>
+        <label> Locality  </label>
+        <input type="text" name="locality" value="" />
+      </td>
+      <td>
+        <label> City  </label>
+        <input type="text" name="city" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label> State  </label>
+        <input type="text" name="lastName" value="" />
+      </td>
+      <td>
+        <label> Zip Code  </label>
+        <input type="text" name="lastName" value="" />
+      </td>
+      <td>
+        <label for="county">Country:</label>
+        <select name="county" id="country">
+          <option value="India">India</option>
+          <option value="Africa">Africa</option>
+          <option value="Pakistan">Pakistan</option>
+  </select>
+      </td>
+    </tr>  
+  </table>
+</div>
+
+
+<div class="userinput">
+  <h3><label> Communication Address  </label></h3>
+ </div>
+<div class="userinput">
+  <table>
+  <tr>
+    <td>
+      <label> House Number and Name  </label>
+      <input type="text" name="housenumber" value="" />
+    </td>
+    <td>
+      <label> Street number and Name  </label>
+      <input type="text" name="streetnumber" value="" />
+    </td>
+    <td>
+      <label> Locality  </label>
+      <input type="text" name="locality" value="" />
+    </td>
+    <td>
+      <label> City  </label>
+      <input type="text" name="city" value="" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label> State  </label>
+      <input type="text" name="state" value="" />
+    </td>
+    <td>
+      <label> Zip Code  </label>
+      <input type="text" name="zipcode" value="" />
+    </td>
+    <td>
+      <label for="country">Country:</label>
+      <select name="country" id="country">
+        <option value="India">India</option>
+        <option value="Africa">Africa</option>
+        <option value="Pakistan">Pakistan</option>
+</select>
+    </td>
+  </tr>  
+</table>
+</div>
+  
+<div class="userinput">
+  <h3><label> Parent   </label></h3>
+</div>
+<div class="userinput">
+  <label> First Name  </label>
+  <input type="text" name="parentfirstname" value="" />
+ </div>
+
+ <div class="userinput">
+   <label> Middle Name  </label>
+   <input type="text" name="parentmiddlename" value="" />
+  </div>
+ 
+ <div class="userinput">
+  <label> Last Name  </label>
+  <input type="text" name="parentlastname" value="" />
+ </div>
+  
+  <div class="userinput">
+   <label> Email </label>   
+   <input type="text" name="email" value="" /><label> @ </label><input type="text" name="emailextension" value="" />
+  </div>
+  
+  <div class="userinput">
+    <label>Parent Education Qualification </label><br>
+    <textarea name="comments" palceholder="Search here" rows="7" cols="40"></textarea>
+   </div>
+
+   <div class="userinput">
+    <h3><label> Details of Student   </label></h3>
+  </div>
+  <div class="userinput">
+   <label> Gender </label>
+   <input type="radio" name="gender" value="m"/> Male
+   <input type="radio" name="gender" value="f" /> Female    
+  </div>
+
+  <label for="birthday">Date of Birth:</label>
+  <input type="date" id="birthday" name="birthday">
+  
+
+  <div class="userinput">
+   <label>Occupation of Parent </label>
+   <select name="parentoccupation">
+    <option value="CEO">CEO</option>
+    <option value="Clerk">Clerk</option>
+    <option value="Manager">Manager </option>
+   </select>
+  </div>
+
+  <div class="userinput">
+    <label>Religion </label>
+    <select name="religion">
+     <option value="Hindu">Hindu</option>
+     <option value="Muslim">Muslim</option>
+     <option value="Christian">Christian</option>
+    </select>
+   </div>
+
+   <div class="userinput">
+    <label>Nationality </label>
+    <select name="nationality">
+     <option value="Indian">Indian</option>
+     <option value="American">American</option>
+     <option value="African">African</option>
+    </select>
+   </div>
+
+   <div class="userinput">
+    <label>Student Identification Marks </label><br>
+    <textarea name="comments" palceholder="Search here" rows="7" cols="40"></textarea>
+   </div>
+  
+  <div style="text-align:center">
+   <input type="submit" value="Submit">   
+  </div>
+  
+ </form>
+ </div>
+</body>
+
+</html>
